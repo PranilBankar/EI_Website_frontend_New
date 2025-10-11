@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Engineering India RBU</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="logo">
+                    <div class="logo-circle">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <span class="brand-text">Engineering India RBU</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="posts.html">Posts</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="cta-btn">Join Our Community</button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Gallery</h1>
+            <p>Capturing moments of impact, innovation, and community spirit</p>
+        </div>
+    </section>
+
+    <!-- Gallery Categories -->
+    <section class="gallery-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">All Photos</button>
+                <button class="tab-btn" data-category="events">Events</button>
+                <button class="tab-btn" data-category="community">Community Service</button>
+                <button class="tab-btn" data-category="technical">Technical</button>
+                <button class="tab-btn" data-category="cultural">Cultural</button>
+                <button class="tab-btn" data-category="team">Team</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Gallery -->
+    <section class="featured-gallery">
+        <div class="container">
+            <h2 class="section-title">Featured Moments</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item large" data-category="events">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Blood Donation Camp</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Blood Donation Camp</h3>
+                                <p>February 10, 2024</p>
+                                <span class="gallery-tag">Health</span>
+                            </div>
+                            <button class="gallery-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="community">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>SAHAYATA Drive</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>SAHAYATA Donation Drive</h3>
+                                <p>March 15, 2024</p>
+                                <span class="gallery-tag">Community</span>
+                            </div>
+                            <button class="gallery-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="technical">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>3D Design Workshop</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>3D Design Workshop</h3>
+                                <p>March 1, 2024</p>
+                                <span class="gallery-tag">Technical</span>
+                            </div>
+                            <button class="gallery-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="cultural">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Youth Day</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Youth Day Celebration</h3>
+                                <p>January 12, 2024</p>
+                                <span class="gallery-tag">Cultural</span>
+                            </div>
+                            <button class="gallery-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="team">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Team Meeting</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Leadership Team Meeting</h3>
+                                <p>February 5, 2024</p>
+                                <span class="gallery-tag">Team</span>
+                            </div>
+                            <button class="gallery-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="community">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Street Teaching</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Street Teaching Program</h3>
+                                <p>February 20, 2024</p>
+                                <span class="gallery-tag">Community</span>
+                            </div>
+                            <button class="gallery-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="technical">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Guest Lecture</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Industry Expert Lecture</h3>
+                                <p>March 5, 2024</p>
+                                <span class="gallery-tag">Technical</span>
+                            </div>
+                            <button class="gallery-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Workshop</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Technical Workshop</h3>
+                                <p>February 15, 2024</p>
+                                <span class="gallery-tag">Events</span>
+                            </div>
+                            <button class="gallery-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="cultural">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Cultural Night</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Cultural Night</h3>
+                                <p>January 20, 2024</p>
+                                <span class="gallery-tag">Cultural</span>
+                            </div>
+                            <button class="gallery-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="team">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Team Building</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Team Building Activity</h3>
+                                <p>February 25, 2024</p>
+                                <span class="gallery-tag">Team</span>
+                            </div>
+                            <button class="gallery-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="community">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Awareness Camp</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Health Awareness Camp</h3>
+                                <p>March 10, 2024</p>
+                                <span class="gallery-tag">Community</span>
+                            </div>
+                            <button class="gallery-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Annual Meet</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Annual General Meeting</h3>
+                                <p>January 30, 2024</p>
+                                <span class="gallery-tag">Events</span>
+                            </div>
+                            <button class="gallery-btn"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery -->
+    <section class="video-gallery">
+        <div class="container">
+            <h2 class="section-title">Video Highlights</h2>
+            <div class="video-grid">
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <p>Blood Donation Camp Highlights</p>
+                        </div>
+                        <div class="video-duration">2:30</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Blood Donation Camp Highlights</h3>
+                        <p>Watch the highlights from our successful blood donation camp</p>
+                        <span class="video-date">February 10, 2024</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <p>Youth Day Celebration</p>
+                        </div>
+                        <div class="video-duration">3:45</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Youth Day Celebration</h3>
+                        <p>Cultural performances and celebrations from Youth Day</p>
+                        <span class="video-date">January 12, 2024</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <p>3D Workshop Demo</p>
+                        </div>
+                        <div class="video-duration">4:20</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>3D Design Workshop Demo</h3>
+                        <p>Students showcasing their 3D modeling skills</p>
+                        <span class="video-date">March 1, 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Upload CTA -->
+    <section class="photo-upload-cta">
+        <div class="container">
+            <h2>Share Your Moments</h2>
+            <p>Have photos from our events? Share them with the community!</p>
+            <div class="upload-options">
+                <button class="btn-primary">
+                    <i class="fas fa-upload"></i>
+                    Upload Photos
+                </button>
+                <button class="btn-secondary">
+                    <i class="fas fa-share"></i>
+                    Share on Social Media
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <div class="logo-circle">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <span class="brand-text">Engineering India RBU</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Building a stronger engineering community through collaboration, innovation, and social impact. Together, we create a better tomorrow.
+                    </p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> engineeringindiarbu@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +91 7821903003</p>
+                        <p><i class="fas fa-map-marker-alt"></i> RBU Campus, Nagpur, Maharashtra, India - 440010</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-middle">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="events.html">Our Events</a></li>
+                            <li><a href="team.html">Leadership Team</a></li>
+                            <li><a href="index.html#contact">Join Us</a></li>
+                            <li><a href="posts.html">Posts</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="index.html#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Our Initiatives</h4>
+                        <ul>
+                            <li><a href="#">Blood Donation Camps</a></li>
+                            <li><a href="#">Awareness Programs</a></li>
+                            <li><a href="#">Cultural Activities</a></li>
+                            <li><a href="#">Technical Workshops</a></li>
+                            <li><a href="#">Career Guidance</a></li>
+                            <li><a href="#">Community Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <div class="footer-impact">
+                        <h4>Our Impact</h4>
+                        <div class="impact-cards">
+                            <div class="impact-card">
+                                <div class="impact-number">100+</div>
+                                <div class="impact-label">Active Members</div>
+                            </div>
+                            <div class="impact-card">
+                                <div class="impact-number">5+</div>
+                                <div class="impact-label">Donation Camps</div>
+                            </div>
+                            <div class="impact-card">
+                                <div class="impact-number">15+</div>
+                                <div class="impact-label">Events Organized</div>
+                            </div>
+                            <div class="impact-card">
+                                <div class="impact-number">200+</div>
+                                <div class="impact-label">Lives Impacted</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <h4>Join Us</h4>
+                        <p>Stay updated with our latest events and exclusives.</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button class="newsletter-btn">
+                                <i class="fas fa-flag"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Engineering India RBU. All rights reserved. Made with ❤️ for the engineering community.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="conduct.html">Code of Conduct</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Gallery filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
