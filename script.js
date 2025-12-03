@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initParallaxEffects();
     initCounters();
     initTypingEffect();
+    initMembershipModal();
 });
 
 // Smooth Scrolling for Navigation Links
@@ -228,18 +229,22 @@ function showNotification(message, type = 'info') {
     notification.className = `notification notification-${type}`;
     notification.innerHTML = `
         <div class="notification-content">
-            <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+            <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
             <span>${message}</span>
             <button class="notification-close">&times;</button>
         </div>
     `;
     
     // Add styles
+    let bgColor = '#007bff';
+    if (type === 'success') bgColor = '#28a745';
+    if (type === 'error') bgColor = '#dc3545';
+    
     notification.style.cssText = `
         position: fixed;
         top: 20px;
         right: 20px;
-        background: ${type === 'success' ? '#28a745' : '#007bff'};
+        background: ${bgColor};
         color: white;
         padding: 15px 20px;
         border-radius: 8px;
@@ -430,6 +435,154 @@ const debouncedScrollHandler = debounce(() => {
 }, 16);
 
 window.addEventListener('scroll', debouncedScrollHandler);
+
+// Membership Modal Functionality
+function initMembershipModal() {
+    const modal = document.getElementById('membershipModal');
+    const openBtn = document.getElementById('becomeMemberBtn');
+    const closeBtn = document.querySelector('.modal-close');
+    const cancelBtn = document.querySelector('.modal-cancel');
+    const form = document.getElementById('membershipForm');
+    
+    if (!modal || !openBtn) return;
+    
+    // Open modal
+    openBtn.addEventListener('click', function() {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    // Close modal
+    function closeModal() {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+        // Reset form if needed
+        form.reset();
+    }
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+    
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', closeModal);
+    }
+    
+    // Close when clicking outside modal
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+    
+    // Handle form submission
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleMembershipFormSubmission(form);
+        });
+    }
+}
+
+// Handle Membership Form Submission
+function handleMembershipFormSubmission(form) {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+    
+    // Disable submit button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+    
+    // Collect form data
+    const formData = new FormData(form);
+    const data = {};
+    
+    // Get all form values
+    formData.forEach((value, key) => {
+        if (key === 'interests') {
+            // Handle multiple checkboxes
+            if (!data[key]) {
+                data[key] = [];
+            }
+            data[key].push(value);
+        } else {
+            data[key] = value;
+        }
+    });
+    
+    // Format interests as string
+    if (data.interests && Array.isArray(data.interests)) {
+        data.interests = data.interests.join(', ');
+    }
+    
+    // Option 1: Using Formspree (Free service - no backend needed)
+    // Replace 'YOUR_FORMSPREE_ID' with your actual Formspree form ID
+    // Get it from https://formspree.io/ (free account)
+    const formspreeUrl = 'https://formspree.io/f/YOUR_FORMSPREE_ID';
+    
+    // Option 2: Using EmailJS (Alternative - also free)
+    // Option 3: Send to your own backend API endpoint
+    
+    // For now, we'll simulate submission and show success
+    // Replace this with actual API call when you have backend/Formspree setup
+    
+    setTimeout(() => {
+        // Simulate API call
+        // In production, replace this with:
+        /*
+        fetch(formspreeUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            showMembershipSuccess(form);
+        })
+        .catch(error => {
+            showMembershipError(submitBtn, originalBtnText);
+        });
+        */
+        
+        // For now, show success message
+        showMembershipSuccess(form);
+    }, 1500);
+}
+
+// Show Success Message
+function showMembershipSuccess(form) {
+    const modalBody = form.closest('.modal-body');
+    const successHTML = `
+        <div class="form-success show">
+            <div class="form-success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3>Application Submitted Successfully!</h3>
+            <p>Thank you for your interest in joining Engineering India RBU. We've received your application and will get back to you soon.</p>
+            <button class="btn-primary" onclick="location.reload()">
+                <i class="fas fa-home"></i> Return to Home
+            </button>
+        </div>
+    `;
+    
+    modalBody.innerHTML = successHTML;
+}
+
+// Show Error Message
+function showMembershipError(submitBtn, originalBtnText) {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalBtnText;
+    showNotification('Failed to submit application. Please try again later.', 'error');
+}
 
 // Console welcome message
 console.log('%c🚀 Engineering India RBU Website', 'color: #FF9933; font-size: 20px; font-weight: bold;');
