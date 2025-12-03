@@ -208,25 +208,11 @@ function animateCounter(element) {
     }, 16);
 }
 
-// Typing Effect for Hero Title
+// Typing Effect for Hero Title - Disabled to preserve HTML structure
 function initTypingEffect() {
-    const titleElement = document.querySelector('.hero-title');
-    if (!titleElement) return;
-    
-    const text = titleElement.innerHTML;
-    titleElement.innerHTML = '';
-    
-    let i = 0;
-    const typeWriter = () => {
-        if (i < text.length) {
-            titleElement.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
-    };
-    
-    // Start typing effect after a delay
-    setTimeout(typeWriter, 1000);
+    // Typing effect disabled - title displays immediately with proper HTML rendering
+    // This prevents HTML tags from being displayed as text
+    return;
 }
 
 // Notification System
